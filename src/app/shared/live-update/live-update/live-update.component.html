@@ -1,0 +1,16 @@
+<div class="card" *ngIf="currentPrice$ | async as currentPrice">
+  <div class="container">
+    <h4>
+      <b>{{ currentPrice.instrumentName }}</b>
+    </h4>
+    <div class="details">
+      <span>bid: {{ currentPrice.bid | number : "1.0-4" }}</span>
+
+      <span>ask: {{ currentPrice.ask | number : "1.0-4" }}</span>
+      <span>
+        time:
+        {{ currentPrice.timestamp | date : "yyyy-MM-dd: HH:mm:ss" }}</span
+      >
+    </div>
+  </div>
+</div>

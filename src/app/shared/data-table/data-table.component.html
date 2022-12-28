@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>ask</th>
+    <th>bid</th>
+    <th>instrument</th>
+    <th>time</th>
+  </tr>
+  <tr *ngFor="let price of allPrices$ | async; trackBy: trackByFn">
+    <td>
+      {{ price?.id }}
+    </td>
+    <td>
+      {{ price?.ask | number : "1.2" }}
+    </td>
+    <td>
+      {{ price?.bid | number : "1.2" }}
+    </td>
+    <td>
+      {{ price?.instrumentName }}
+    </td>
+    <td>
+      {{ price?.timestamp | date : "yyyy-MM-dd : HH:mm:ss" }}
+    </td>
+  </tr>
+</table>
